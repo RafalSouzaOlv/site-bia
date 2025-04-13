@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden; /* impede que a tela deslize lateralmente */
 }
 
 .tempo {
@@ -99,4 +105,10 @@ b {
   background-color: #ffb6c1; /* rosinha claro no hover */
   color: white;
   transform: scale(1.05);
+}
+.adicionar-btn {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: block;
 }

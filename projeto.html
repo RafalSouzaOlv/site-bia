@@ -47,27 +47,6 @@
 
   <body>
     <div class="tempo">
-      <div
-        id="formularioLembranca"
-        style="display: none; text-align: center; margin: 20px"
-      >
-        <input type="file" id="fotoInput" accept="image/*" /><br /><br />
-        <textarea
-          id="descricaoInput"
-          placeholder="Escreva sua lembrança aqui 💖"
-          rows="4"
-          cols="50"
-          style="resize: none"
-        ></textarea
-        ><br /><br />
-        <button onclick="adicionarLembranca()">Salvar Lembrança</button>
-      </div>
-
-      <div style="text-align: center; margin: 20px">
-        <button class="botao-lembranca" onclick="toggleFormulario()">
-          💖 Adicionar Novas Lembranças 💖
-        </button>
-      </div>
 
       <img src="imagem/nossa-foto-igreja.jpg" alt="" />
       <h1>💖 Desde que nos falamos 💖</h1>
@@ -101,6 +80,28 @@
           </iframe>
         </div>
       </div>
+      <div
+      id="formularioLembranca"
+      style="display: none; text-align: center; margin: 20px"
+    >
+      <input type="file" id="fotoInput" accept="image/*" /><br /><br />
+      <textarea
+        id="descricaoInput"
+        placeholder="Escreva sua lembrança aqui 💖"
+        rows="4"
+        cols="50"
+        style="resize: none"
+      ></textarea
+      ><br /><br />
+      <button onclick="adicionarLembranca()">Salvar Lembrança</button>
+    </div>
+
+    <div style="text-align: center; margin: 20px">
+      <button class="botao-lembranca" onclick="toggleFormulario()">
+        💖 Adicionar Novas Lembranças 💖
+      </button>
+    </div>
+
       <script>
         const startDate = new Date("2022-11-25T00:00:00");
         function updateTimer() {

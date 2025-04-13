@@ -6,10 +6,71 @@
     <title>Desde que nos conhecemos</title>
     <link rel="stylesheet" href="projeto.css" />
   </head>
+  <style>
+    .heart {
+      position: fixed;
+      top: -50px;
+      color: pink;
+      animation: fall 5s linear infinite;
+      font-size: 24px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
   <body>
     <div class="tempo">
+      <div
+        id="formularioLembranca"
+        style="display: none; text-align: center; margin: 20px"
+      >
+        <input type="file" id="fotoInput" accept="image/*" /><br /><br />
+        <textarea
+          id="descricaoInput"
+          placeholder="Escreva sua lembrança aqui 💖"
+          rows="4"
+          cols="50"
+          style="resize: none"
+        ></textarea
+        ><br /><br />
+        <button onclick="adicionarLembranca()">Salvar Lembrança</button>
+      </div>
+
+      <div style="text-align: center; margin: 20px">
+        <button class="botao-lembranca" onclick="toggleFormulario()">
+          💖 Adicionar Novas Lembranças 💖
+        </button>
+      </div>
+
       <img src="imagem/nossa-foto-igreja.jpg" alt="" />
-      <h1>💖 Desde que nos conhecemos 💖</h1>
+      <h1>💖 Desde que nos falamos 💖</h1>
       <div class="timer">
         <div class="unit">
           <span id="years">0</span><span class="label">Anos</span>
@@ -29,6 +90,15 @@
         <div class="unit">
           <span id="seconds">0</span><span class="label">Segundos</span>
         </div>
+        <iframe
+          width="50%"
+          height="100"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/leandrin-do-passinho/vem-ca-pele-milflows-prod-volp&color=%23ff6699&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        >
+        </iframe>
       </div>
       <script>
         const startDate = new Date("2022-11-25T00:00:00");
@@ -56,64 +126,152 @@
           document.getElementById("months").textContent = months;
           document.getElementById("days").textContent = totalDays % 30;
           document.getElementById("hours").textContent = hours
-          .toString()
+            .toString()
             .padStart(2, "0");
-            document.getElementById("minutes").textContent = minutes
+          document.getElementById("minutes").textContent = minutes
             .toString()
             .padStart(2, "0");
           document.getElementById("seconds").textContent = seconds
-          .toString()
-          .padStart(2, "0");
+            .toString()
+            .padStart(2, "0");
         }
         updateTimer();
         setInterval(updateTimer, 1000);
-        </script>
+      </script>
     </div>
     <div class="imagens">
       <figure>
-        <img src="imagem/basquete.jpg" alt="">
+        <img src="imagem/basquete.jpg" alt="" />
         <figcaption>31/03/2025</figcaption>
       </figure>
-      <p>💖A nossa foto no dia do aniversário do Estevão 💖<br>
-        💖Nós ficamos juntos nos brinquedos e foi tão bom kkkk💖 <br>
-        💖Cada segundo daqueles momentos com você, foram mágicos 💖</p>
-      
-        <figure>
-      <img src="imagem/minha-primeira-carta.jpg" alt="">
-      <figcaption>14/01/2025</figcaption>
-        </figure>
-        <p>💖Essa foi a minha primerida carta pra você💖 <br>
-          💖EU tive que aprender a escrever desse jeito porque eu tinha visto no TikTok um cara fazendo desse jeito 💖<br>
-      💖Deu um trabalho pq eu tive que colocar café na folha, esperar secar, escrever kkkk💖</p>
-      
+      <p>
+        💖A nossa foto no dia do aniversário do Estevão 💖<br />
+        💖Nós ficamos juntos nos brinquedos e foi tão bom kkkk💖 <br />
+        💖Cada segundo daqueles momentos com você, foram mágicos 💖
+      </p>
+
       <figure>
-        <img src="imagem/sua-carta-pramim.jpg" alt="">
+        <img src="imagem/minha-primeira-carta.jpg" alt="" />
+        <figcaption>14/01/2025</figcaption>
+      </figure>
+      <p>
+        💖Essa foi a minha primerida carta pra você💖 <br />
+        💖EU tive que aprender a escrever desse jeito porque eu tinha visto no
+        TikTok um cara fazendo desse jeito 💖<br />
+        💖Deu um trabalho pq eu tive que colocar café na folha, esperar secar,
+        escrever kkkk💖
+      </p>
+
+      <figure>
+        <img src="imagem/sua-carta-pramim.jpg" alt="" />
         <figcaption>06/03/2024</figcaption>
       </figure>
-      <p>💖A sua carta... <br>
-      💖Eu fiqueri tão feliz de receber, todas essas coisas pequenas que você faz, me trazem infinitas felicidades💖. <br>
-      💖Eu nunca vou cansar de receber esse tipo de carta💖. <br>
-      💖Até coloquei na minha capa do celular💖</p>
-      
+      <p>
+        💖A sua carta... <br />
+        💖Eu fiqueri tão feliz de receber, todas essas coisas pequenas que você
+        faz, me trazem infinitas felicidades💖. <br />
+        💖Eu nunca vou cansar de receber esse tipo de carta💖. <br />
+        💖Até coloquei na minha capa do celular💖
+      </p>
+
       <figure>
-      <img src="imagem/nossa-foto-no-retiro.jpg" alt=""> 
-      <figcaption>12/02/2024</figcaption>
+        <img src="imagem/nossa-foto-no-retiro.jpg" alt="" />
+        <figcaption>12/02/2024</figcaption>
       </figure>
-      💖<b>SEM PALAVRAS PARA AQUELES DIAS</b>💖 <br>
-      <p>💖Nossa foto no retiro lá em Mendes💖<br>
-      💖Eu amei cada segundo que nós passamos lá, foi a primeira vez que eu passei mais de um dia com você💖 <br>
-      💖Nós conseguimos ficar juntos, pertinhos, curtindo, rindo e ainda viramos a noite 💖<br>
-      💖São lembranças que eu nunca vou me esquecer💖</p>
-      
+      💖<b>SEM PALAVRAS PARA AQUELES DIAS</b>💖 <br />
+      <p>
+        💖Nossa foto no retiro lá em Mendes💖<br />
+        💖Eu amei cada segundo que nós passamos lá, foi a primeira vez que eu
+        passei mais de um dia com você💖 <br />
+        💖Nós conseguimos ficar juntos, pertinhos, curtindo, rindo e ainda
+        viramos a noite 💖<br />
+        💖São lembranças que eu nunca vou me esquecer💖
+      </p>
+
       <figure>
-      <img src="imagem/seu-ultimo-aniversario.jpg" alt="">
-      <figcaption>03/03/2025</figcaption>
+        <img src="imagem/seu-ultimo-aniversario.jpg" alt="" />
+        <figcaption>03/03/2025</figcaption>
       </figure>
-      <p>💖O SEU ÚLTIMO ANIVERSÁRIO💖 <br>
-      💖Seu primeira aniversário que nó passamos namorando💖 <br>
-      💖Não foi preciso ficar se escondendo ou ficar sem graça, agora que ja está liberado kkk💖 <br>
-      💖Espero poder passar todos os restantes com você💖 <br>
-      💖Passamos aniversários sendo colegas, depois amigos, ficantes kkk, namorando agora e espero passar casado com você💖</p>
+      <p>
+        💖O SEU ÚLTIMO ANIVERSÁRIO💖 <br />
+        💖Seu primeira aniversário que nó passamos namorando💖 <br />
+        💖Não foi preciso ficar se escondendo ou ficar sem graça, agora que ja
+        está liberado kkk💖 <br />
+        💖Espero poder passar todos os restantes com você💖 <br />
+        💖Passamos aniversários sendo colegas, depois amigos, ficantes kkk,
+        namorando agora e espero passar casado com você💖
+      </p>
     </div>
+    <script>
+      function toggleFormulario() {
+        const form = document.getElementById("formularioLembranca");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+      }
+
+      function adicionarLembranca() {
+        const fileInput = document.getElementById("fotoInput");
+        const descricao = document.getElementById("descricaoInput").value;
+
+        if (fileInput.files.length === 0 || descricao.trim() === "") {
+          alert("Por favor, adicione uma foto e uma descrição.");
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const imagensDiv = document.querySelector(".imagens");
+
+          const novaFigura = document.createElement("figure");
+          const novaImagem = document.createElement("img");
+          novaImagem.src = e.target.result;
+          novaFigura.appendChild(novaImagem);
+
+          const novaDescricao = document.createElement("p");
+          novaDescricao.innerHTML = `💖${descricao.replace(/\n/g, "<br>💖")}💖`;
+
+          imagensDiv.appendChild(novaFigura);
+          imagensDiv.appendChild(novaDescricao);
+
+          document.getElementById("fotoInput").value = "";
+          document.getElementById("descricaoInput").value = "";
+
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    </script>
+
+    <script>
+      // Função que adiciona evento de clique em TODAS as imagens dentro de figure
+      function ativarExclusaoPorClique() {
+        const figuras = document.querySelectorAll(".imagens figure");
+
+        figuras.forEach((figure) => {
+          const imagem = figure.querySelector("img");
+
+          imagem.style.cursor = "pointer"; // Mostra que é clicável
+
+          imagem.onclick = function () {
+            if (confirm("Tem certeza que quer excluir essa lembrança? 💔")) {
+              // Remove a imagem e o parágrafo que vem depois (descrição)
+              const paragrafo = figure.nextElementSibling;
+              figure.remove();
+              if (paragrafo && paragrafo.tagName.toLowerCase() === "p") {
+                paragrafo.remove();
+              }
+            }
+          };
+        });
+      }
+
+      // Ativa a função ao carregar
+      ativarExclusaoPorClique();
+
+      // Se você estiver criando lembranças dinamicamente, chame isso novamente após criar
+    </script>
   </body>
 </html>

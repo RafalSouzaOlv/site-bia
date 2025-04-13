@@ -1,10 +1,8 @@
-
 .tempo {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   /* background-color: #fff0f5; */
-  background: linear-gradient(-45deg, #000000, #ffffff7c, #ffffff, #eb030396);
+  background: linear-gradient(-45deg, #fff0f5a4, #fff0f5, #f30a0a44, #00000042);
   /* background: url(imagem/imagem\ coração.svg) no-repeat center center fixed; */
-  background-size: 40% 40%;
   animation: gradient 10s ease infinite;
   display: flex;
   justify-content: center;
@@ -13,6 +11,7 @@
   flex-direction: column;
   color: #000;
   text-align: center;
+  backdrop-filter: blur(20px);
 }
 
 @keyframes gradient {
@@ -49,9 +48,28 @@
 img {
   width: 150px;
   border-radius: 20%;
-  border: 5px solid #e8050593
+  border: 5px solid #e8050593;
 }
 
 figure {
   color: rgb(248, 0, 0);
+}
+
+.imagens {
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #f30a0a91, #00000042, #fff0f5, #fff0f5);
+  margin-top: 2px;
+  align-items: center;
+  padding: 16px;
+  line-height: 35px;
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(10px);
+}
+
+b {
+  color: brown;
+  text-decoration: solid;
+  text-decoration-line: underline;
+  text-decoration-color: #ffffff60;
 }

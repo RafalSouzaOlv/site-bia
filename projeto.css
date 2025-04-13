@@ -3,6 +3,10 @@
   max-width: 100%;
 }
 
+h1 {
+  font-size: 20px;
+}
+
 html,
 body {
   margin: 0;
@@ -111,4 +115,7 @@ b {
   max-width: 400px;
   margin: 20px auto;
   display: block;
+}
+.botao-lembranca{
+  font-size: 15px;
 }

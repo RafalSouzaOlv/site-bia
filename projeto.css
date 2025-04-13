@@ -1,0 +1,57 @@
+
+.tempo {
+  font-family: 'Segoe UI', sans-serif;
+  /* background-color: #fff0f5; */
+  background: linear-gradient(-45deg, #000000, #ffffff7c, #ffffff, #eb030396);
+  /* background: url(imagem/imagem\ coração.svg) no-repeat center center fixed; */
+  background-size: 40% 40%;
+  animation: gradient 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: #000;
+  text-align: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.timer {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2em;
+}
+
+.unit span.label {
+  font-size: 0.5em;
+  margin-top: 5px;
+  color: #333;
+}
+img {
+  width: 150px;
+  border-radius: 20%;
+  border: 5px solid #e8050593
+}
+
+figure {
+  color: rgb(248, 0, 0);
+}

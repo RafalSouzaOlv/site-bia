@@ -18,7 +18,8 @@ body {
 .tempo {
   font-family: "Segoe UI", sans-serif;
   /* background-color: #fff0f5; */
-  background: linear-gradient(-45deg, #fff0f5a4, #fff0f5, #f30a0a44, #00000042);
+  background: linear-gradient(-45deg, #030303a4, #ff0055, #00000044, #ff0055);
+  /* background: linear-gradient(-45deg, #fff0f5a4, #fff0f5, #f30a0a44, #00000042); */
   /* background: url(imagem/nossa-foto-igreja.jpg); */
   /* background: url(imagem/imagem\ coração.svg) no-repeat center center fixed; */
   animation: gradient 10s ease infinite;
@@ -76,7 +77,8 @@ figure {
 .imagens {
   text-align: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #f30a0a91, #00000042, #fff0f5, #fff0f5);
+  /* background: linear-gradient(-45deg, #f30a0a91, #00000042, #fff0f5, #fff0f5); */
+  background: linear-gradient(-45deg, #f7f7f7a4, #f37da4, #00000044, #f37da4);
   margin-top: 2px;
   align-items: center;
   padding: 16px;
